@@ -3,6 +3,7 @@ package controllers;
 import models.Constants;
 import models.User;
 import play.mvc.*;
+import play.i18n.Messages;
 
 import java.util.List;
 
