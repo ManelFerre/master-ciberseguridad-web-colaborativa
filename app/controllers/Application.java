@@ -43,10 +43,13 @@ public class Application extends Controller {
 
 
     public static void removeStudent(String student) {
-        checkTeacher();
-
-        User.remove(student);
-        index();
+        if (session.contains("username")){
+           checkTeacher();
+           User.remove(student);
+           index();
+        }
+        flash.put("error", Messages.get("Acceso restringido"));
+        Secure.login();  
     }
 
 
